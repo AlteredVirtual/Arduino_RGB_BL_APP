@@ -1,4 +1,4 @@
-package com.umut.rgb_led
+package com.sharpangel.rgb_led
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getTargetContext()
-        assertEquals("com.umut.rgb_led", appContext.packageName)
+        assertEquals("com.sharpangel.rgb_led", appContext.packageName)
     }
 }
