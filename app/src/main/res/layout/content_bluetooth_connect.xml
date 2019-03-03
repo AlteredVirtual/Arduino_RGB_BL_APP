@@ -6,20 +6,20 @@
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		app:layout_behavior="@string/appbar_scrolling_view_behavior"
-		tools:showIn="@layout/activity_bluethoot_connect"
-		tools:context=".BluethootConnect">
+		tools:showIn="@layout/activity_bluetooth_connect"
+		tools:context=".BluetoothConnect">
 	
 	<ListView
-			android:id="@+id/bluethoot"
+			android:id="@+id/bluetooth"
 			android:layout_width="wrap_content"
 			android:layout_height="0dp"
 			
 			app:layout_constraintTop_toTopOf="parent"
-			app:layout_constraintBottom_toTopOf="@+id/bluethoot_refresh"
+			app:layout_constraintBottom_toTopOf="@+id/bluetooth_refresh"
 			android:layout_marginBottom="10dp"
 	/>
 	<Button
-			android:id="@+id/bluethoot_refresh"
+			android:id="@+id/bluetooth_refresh"
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			app:layout_constraintLeft_toLeftOf="parent"

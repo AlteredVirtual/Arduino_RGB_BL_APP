@@ -1,4 +1,4 @@
 <resources>
 	<string name="app_name">RGB_LED</string>
-	<string name="title_activity_bluethoot_connect">BluethootConnect</string>
+	<string name="title_activity_bluetooth_connect">BluetoothConnect</string>
 </resources>

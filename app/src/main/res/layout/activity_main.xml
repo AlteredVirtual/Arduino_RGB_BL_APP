@@ -80,7 +80,7 @@
 			android:layout_gravity="bottom|end"
 			android:layout_marginBottom="32dp"
 			android:layout_marginEnd="260dp"
-			android:src="@drawable/ic_bluethoot"
+			android:src="@drawable/ic_bluetooth"
 			app:backgroundTint="@android:color/white"
 			app:elevation="6dp"/>
 

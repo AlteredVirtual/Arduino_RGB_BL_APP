@@ -13,9 +13,9 @@
 			android:supportsRtl="true"
 			android:theme="@style/AppTheme" tools:ignore="GoogleAppIndexingWarning">
 		<activity
-				android:name=".BluethootConnect"
+				android:name=".BluetoothConnect"
 				
-				android:label="@string/title_activity_bluethoot_connect">
+				android:label="@string/title_activity_bluetooth_connect">
 		</activity>
 		<activity android:name=".MainActivity">
 			<intent-filter>

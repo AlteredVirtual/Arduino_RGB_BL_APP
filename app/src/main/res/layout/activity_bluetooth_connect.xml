@@ -6,7 +6,7 @@
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:fitsSystemWindows="false"
-		tools:context="com.umut.rgb_led.BluethootConnect">
+		tools:context="com.umut.rgb_led.BluetoothConnect">
 	
 	<android.support.design.widget.AppBarLayout
 			android:layout_width="match_parent"
@@ -22,7 +22,7 @@
 	
 	</android.support.design.widget.AppBarLayout>
 	
-	<include layout="@layout/content_bluethoot_connect"/>
+	<include layout="@layout/content_bluetooth_connect"/>
 
 
 

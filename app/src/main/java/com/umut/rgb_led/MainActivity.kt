@@ -46,7 +46,7 @@ class MainActivity:AppCompatActivity() {
 
 
         bluetooth.setOnClickListener(){
-            val intent = Intent(this, BluethootConnect::class.java)
+            val intent = Intent(this, BluetoothConnect::class.java)
             startActivity(intent);
         }
     }
