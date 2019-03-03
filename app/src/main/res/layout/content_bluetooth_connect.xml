@@ -10,7 +10,7 @@
 		tools:context=".BluetoothConnect">
 	
 	<ListView
-			android:id="@+id/bluetooth"
+			android:id="@+id/bluetooth_devices"
 			android:layout_width="wrap_content"
 			android:layout_height="0dp"
 			

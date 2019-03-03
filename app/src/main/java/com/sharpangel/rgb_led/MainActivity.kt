@@ -1,6 +1,9 @@
 
 package com.sharpangel.rgb_led
 
+import android.app.ProgressDialog
+import android.bluetooth.BluetoothAdapter
+import android.bluetooth.BluetoothSocket
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -14,14 +17,11 @@ import me.priyesh.chroma.ChromaDialog
 import me.priyesh.chroma.ColorMode
 import me.priyesh.chroma.ColorSelectListener
 import android.view.Gravity
-
-
-
+import java.util.*
 
 
 class MainActivity:AppCompatActivity() {
 
-    private var mColor: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,26 +29,6 @@ class MainActivity:AppCompatActivity() {
 
 
 
-        fab.setOnClickListener()
-        {
-            showColorPickerDialog()
-
-        }
-
-        off.setOnClickListener()
-        {
-
-            val toast = Toast.makeText(this@MainActivity, "RGB led kapatildi!", Toast.LENGTH_SHORT)
-            toast.setGravity(Gravity.CENTER, 0, 50)
-            toast.show()
-
-        }
-
-
-        bluetooth.setOnClickListener(){
-            val intent = Intent(this, BluetoothConnect::class.java)
-            startActivity(intent);
-        }
     }
        // showColorPickerDialog()
 

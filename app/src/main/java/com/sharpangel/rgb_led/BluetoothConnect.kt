@@ -1,12 +1,17 @@
 package com.sharpangel.rgb_led
 
+import android.app.Activity
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothDevice
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import kotlinx.android.synthetic.main.content_bluetooth_connect.*
 import org.jetbrains.anko.toast
+import java.util.*
 
 //import kotlinx.android.synthetic.main.activity_bluetooth_connect.*
 
@@ -24,7 +29,7 @@ class BluetoothConnect : AppCompatActivity() {
 
         m_bluetoothAdapter= BluetoothAdapter.getDefaultAdapter()
         if(m_bluetoothAdapter==null){
-            toast("this device doesn't support bluethoot")
+            toast("Bu cihaz bluetooth desteklemiyor !")
             return
         }
         if (!m_bluetoothAdapter!!.isEnabled){
@@ -36,10 +41,39 @@ class BluetoothConnect : AppCompatActivity() {
     }
     //Show bluetooth devices list
     private fun pairedDeviceList(){
+        m_pairedDevices= m_bluetoothAdapter!!.bondedDevices
+        val list: ArrayList<BluetoothDevice> = ArrayList()
+        if(!m_pairedDevices.isEmpty()){
+            for(device: BluetoothDevice in m_pairedDevices){
+                list.add(device)
+                Log.i("device",""+device)
+            }
+        } else{
+                toast("Bluetooth aygıt bulunamadı !")
+            }
+        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, list)
+        bluetooth_devices.adapter= adapter
+        bluetooth_devices.onItemClickListener= AdapterView.OnItemClickListener {_, _, position, _ ->
+            val device: BluetoothDevice= list[position]
+            val address: String = device.address
 
+            val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra(EXTRA_ADDRESS, address)
+            startActivity(intent)
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode == REQUEST_ENABLE_BLUETOOTH){
+            if(resultCode==Activity.RESULT_OK)
+                if(m_bluetoothAdapter!!.isEnabled) {
+                    toast("Bluetooth aktifleştirildi!")
+                }else{
+                    toast("Bluetooth devre dışı bırakıldı!")
+                }
+        } else if(resultCode == Activity.RESULT_CANCELED){
+            toast("Bluetooth bağlanamadı!")
+        }
     }
 }
