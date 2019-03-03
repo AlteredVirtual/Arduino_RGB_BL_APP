@@ -13,16 +13,20 @@ import kotlinx.android.synthetic.main.content_bluetooth_connect.*
 import org.jetbrains.anko.toast
 import java.util.*
 
-//import kotlinx.android.synthetic.main.activity_bluetooth_connect.*
+
 
 class BluetoothConnect : AppCompatActivity() {
 
-    var m_bluetoothAdapter: BluetoothAdapter? = null
-    lateinit var m_pairedDevices: Set<BluetoothDevice>
-    val  REQUEST_ENABLE_BLUETOOTH=1
+    private var m_bluetoothAdapter: BluetoothAdapter? = null
+    private lateinit var m_pairedDevices: Set<BluetoothDevice>
+    private val  REQUEST_ENABLE_BLUETOOTH=1
+
+
     companion object {
-        val EXTRA_ADDRESS: String="Device_address"
+        const val EXTRA_ADDRESS: String="Device_address"
     }
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bluetooth_connect)
@@ -39,6 +43,10 @@ class BluetoothConnect : AppCompatActivity() {
 
         bluetooth_refresh.setOnClickListener{ pairedDeviceList() }
     }
+
+
+
+
     //Show bluetooth devices list
     private fun pairedDeviceList(){
         m_pairedDevices= m_bluetoothAdapter!!.bondedDevices
@@ -51,9 +59,13 @@ class BluetoothConnect : AppCompatActivity() {
         } else{
                 toast("Bluetooth aygıt bulunamadı !")
             }
+
+
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, list)
-        bluetooth_devices.adapter= adapter
-        bluetooth_devices.onItemClickListener= AdapterView.OnItemClickListener {_, _, position, _ ->
+
+
+        bluetooth_devices.adapter = adapter
+        bluetooth_devices.onItemClickListener = AdapterView.OnItemClickListener {_, _, position, _ ->
             val device: BluetoothDevice= list[position]
             val address: String = device.address
 

@@ -12,17 +12,17 @@
 			android:roundIcon="@mipmap/ic_launcher_round"
 			android:supportsRtl="true"
 			android:theme="@style/AppTheme" tools:ignore="GoogleAppIndexingWarning">
-		<activity
-				android:name="com.sharpangel.rgb_led.BluetoothConnect"
-				
-				android:label="@string/title_activity_bluetooth_connect">
-		</activity>
-		<activity android:name="com.sharpangel.rgb_led.MainActivity">
+		<activity android:name="com.sharpangel.rgb_led.BluetoothConnect" >
+			
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN"/>
 				
 				<category android:name="android.intent.category.LAUNCHER"/>
 			</intent-filter>
+			
+		</activity>
+		<activity android:name="com.sharpangel.rgb_led.MainActivity">
+		
 		</activity>
 	</application>
 
