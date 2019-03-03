@@ -13,12 +13,7 @@
             android:layout_height="wrap_content"
             android:theme="@style/AppTheme.AppBarOverlay">
 	
-		<android.support.v7.widget.Toolbar
-				android:id="@+id/toolbar"
-				android:layout_width="match_parent"
-				android:layout_height="match_parent"
-				android:background="?attr/colorPrimary"
-				app:popupTheme="@style/AppTheme.PopupOverlay"/>
+	
 
     </android.support.design.widget.AppBarLayout>
 	
@@ -51,7 +46,7 @@
 			android:layout_marginEnd="100dp"
 			android:src="@drawable/ic_off"
 			app:backgroundTint="@android:color/white"
-			app:elevation="6dp"/>
+			app:elevation="6dp" android:layout_marginRight="100dp"/>
 	
 	<android.support.design.widget.FloatingActionButton
 			android:id="@+id/fade"
@@ -62,17 +57,17 @@
 			android:layout_marginEnd="180dp"
 			android:src="@drawable/ic_fade"
 			app:backgroundTint="@android:color/white"
-			app:elevation="6dp"/>
+			app:elevation="6dp" android:layout_marginRight="180dp"/>
 	<android.support.design.widget.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_marginBottom="32dp"
-            android:layout_marginEnd="24dp"
-            android:src="@drawable/ic_color"
-            app:backgroundTint="@android:color/white"
-            app:elevation="6dp"/>
+			android:id="@+id/fab"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="bottom|end"
+			android:layout_marginBottom="32dp"
+			android:layout_marginEnd="24dp"
+			android:src="@drawable/ic_color"
+			app:backgroundTint="@android:color/white"
+			app:elevation="6dp" android:layout_marginRight="24dp"/>
 	<android.support.design.widget.FloatingActionButton
 			android:id="@+id/bluetooth"
 			android:layout_width="wrap_content"
@@ -82,6 +77,6 @@
 			android:layout_marginEnd="260dp"
 			android:src="@drawable/ic_bluetooth"
 			app:backgroundTint="@android:color/white"
-			app:elevation="6dp"/>
+			app:elevation="6dp" android:layout_marginRight="260dp"/>
 
 </android.support.design.widget.CoordinatorLayout>
