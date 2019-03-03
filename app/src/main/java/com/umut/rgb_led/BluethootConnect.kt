@@ -11,7 +11,7 @@ class BluethootConnect : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bluethoot_connect)
 
-
+        //Show bluetooth devices 
 
     }
 
