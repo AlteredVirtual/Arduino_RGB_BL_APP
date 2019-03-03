@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="false"
+        tools:context="com.umut.rgb_led.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+	
+		<android.support.v7.widget.Toolbar
+				android:id="@+id/toolbar"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:background="?attr/colorPrimary"
+				app:popupTheme="@style/AppTheme.PopupOverlay"/>
+
+    </android.support.design.widget.AppBarLayout>
+	
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_marginTop="?attr/actionBarSize"
+			android:gravity="center"
+			android:orientation="vertical" android:id="@+id/linearLayout2">
+		
+		<TextView
+				android:id="@+id/text_view"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:fontFamily="sans-serif-medium"
+				android:textAllCaps="true"
+				android:textColor="@android:color/black"
+				android:textSize="32sp"
+				tools:text="#123456"/>
+	
+	</LinearLayout>
+	
+	<android.support.design.widget.FloatingActionButton
+			android:id="@+id/off"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="bottom|end"
+			android:layout_marginBottom="32dp"
+			android:layout_marginEnd="100dp"
+			android:src="@drawable/ic_off"
+			app:backgroundTint="@android:color/white"
+			app:elevation="6dp"/>
+	
+	<android.support.design.widget.FloatingActionButton
+			android:id="@+id/fade"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="bottom|end"
+			android:layout_marginBottom="32dp"
+			android:layout_marginEnd="180dp"
+			android:src="@drawable/ic_fade"
+			app:backgroundTint="@android:color/white"
+			app:elevation="6dp"/>
+	<android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="32dp"
+            android:layout_marginEnd="24dp"
+            android:src="@drawable/ic_color"
+            app:backgroundTint="@android:color/white"
+            app:elevation="6dp"/>
+	<android.support.design.widget.FloatingActionButton
+			android:id="@+id/bluetooth"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="bottom|end"
+			android:layout_marginBottom="32dp"
+			android:layout_marginEnd="260dp"
+			android:src="@drawable/ic_bluethoot"
+			app:backgroundTint="@android:color/white"
+			app:elevation="6dp"/>
+
+</android.support.design.widget.CoordinatorLayout>
