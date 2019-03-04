@@ -37,6 +37,7 @@ class MainActivity:AppCompatActivity() {
         var mColor: Int = 0
     }
     override fun onCreate(savedInstanceState: Bundle?) {
+        
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -55,12 +56,22 @@ class MainActivity:AppCompatActivity() {
 
         }
 
+        fade.setOnClickListener(){ // Make Fade mode
+
+            val toast = Toast.makeText(this@MainActivity, "Fade moda gecildi!", Toast.LENGTH_SHORT)
+            toast.setGravity(Gravity.CENTER, 0, 50)
+            toast.show()
+            sendCommand("<Q>");
+
+        }
+
         off.setOnClickListener()
         {
 
             val toast = Toast.makeText(this@MainActivity, "RGB led kapatildi!", Toast.LENGTH_SHORT)
             toast.setGravity(Gravity.CENTER, 0, 50)
             toast.show()
+            sendCommand("<K>");
 
         }
 
@@ -89,10 +100,12 @@ class MainActivity:AppCompatActivity() {
                     val g = rgb[1].toString()
                     val b = rgb[2].toString()
 
-                    val send_command = "<@$r,$g,$b>"
+                    val set_rgb = "<@$r,$g,$b>"
 
-                    Log.d("VERIABLE",send_command)
+                    Log.d("VERIABLE",set_rgb)
 
+
+                    sendCommand(set_rgb);
                     //convert to r g b and sende command  to bluetooth <@RED,GREEN,BLUE> example as ( <@255,0,0>  is show only red color )
 
 
