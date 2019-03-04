@@ -9,8 +9,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import kotlinx.android.synthetic.main.content_bluetooth_connect.*
-import org.jetbrains.anko.toast
+
 import java.util.*
 
 
@@ -33,7 +34,10 @@ class BluetoothConnect : AppCompatActivity() {
 
         m_bluetoothAdapter= BluetoothAdapter.getDefaultAdapter()
         if(m_bluetoothAdapter==null){
-            toast("Bu cihaz bluetooth desteklemiyor !")
+
+            Toast.makeText(this@BluetoothConnect, "Bu cihaz bluetooth desteklemiyor !", Toast.LENGTH_SHORT).show()
+
+            
             return
         }
         if (!m_bluetoothAdapter!!.isEnabled){
@@ -60,7 +64,8 @@ class BluetoothConnect : AppCompatActivity() {
                 Log.i("device",""+device)
             }
         } else{
-            toast("Bluetooth aygıt bulunamadı !")
+            Toast.makeText(this@BluetoothConnect, "Bluetooth aygıt bulunamadı !", Toast.LENGTH_SHORT).show()
+
         }
 
 
@@ -84,13 +89,13 @@ class BluetoothConnect : AppCompatActivity() {
             if(resultCode==Activity.RESULT_OK)
 
                 if(m_bluetoothAdapter!!.isEnabled) {
-                    toast("Bluetooth aktifleştirildi!")
+                   Toast.makeText(this@BluetoothConnect, "Bluetooth aktifleştirildi!", Toast.LENGTH_SHORT).show()
                 }else{
-                    toast("Bluetooth devre dışı bırakıldı!")
+                   Toast.makeText(this@BluetoothConnect, "Bluetooth devre dışı bırakıldı!", Toast.LENGTH_SHORT).show()
                 }
 
         } else if(resultCode == Activity.RESULT_CANCELED){
-            toast("Bluetooth bağlanamadı!")
+           Toast.makeText(this@BluetoothConnect, "Bluetooth bağlanamadı!", Toast.LENGTH_SHORT).show()
         }
     }
 }
