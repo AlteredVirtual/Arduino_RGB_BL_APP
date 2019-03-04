@@ -9,7 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import kotlinx.android.synthetic.main.content_bluetooth_connect.*
+import kotlinx.android.synthetic.main.activity_bluetooth_connect.*
 import org.jetbrains.anko.toast
 import java.util.*
 
