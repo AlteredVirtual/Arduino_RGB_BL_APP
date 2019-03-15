@@ -9,10 +9,13 @@ import android.content.Context
 import android.content.Intent
 import android.os.AsyncTask
 import android.os.Bundle
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.Gravity
+import android.widget.LinearLayout
 import android.widget.Toast
+import kotlinx.android.synthetic.*
 
 import kotlinx.android.synthetic.main. activity_main.*
 
@@ -58,10 +61,18 @@ class MainActivity:AppCompatActivity() {
 
         fade.setOnClickListener(){ // Make Fade mode
 
-            val toast = Toast.makeText(this@MainActivity, "Fade moda gecildi!", Toast.LENGTH_SHORT)
+            val toast = Toast.makeText(this@MainActivity, "Fade Moda Geçildi!", Toast.LENGTH_SHORT)
             toast.setGravity(Gravity.CENTER, 0, 50)
             toast.show()
             sendCommand("<Q>");
+
+        }
+        flash.setOnClickListener(){ // Make Fade mode
+
+            val toast = Toast.makeText(this@MainActivity, "Flash Moda Geçildi!", Toast.LENGTH_SHORT)
+            toast.setGravity(Gravity.CENTER, 0, 50)
+            toast.show()
+            sendCommand("<F>");
 
         }
 
@@ -103,7 +114,6 @@ class MainActivity:AppCompatActivity() {
                     val set_rgb = "<@$r,$g,$b>"
 
                     Log.d("VERIABLE",set_rgb)
-
 
                     sendCommand(set_rgb);
                     //convert to r g b and sende command  to bluetooth <@RED,GREEN,BLUE> example as ( <@255,0,0>  is show only red color )
