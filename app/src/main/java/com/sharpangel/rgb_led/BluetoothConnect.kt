@@ -33,7 +33,7 @@ class BluetoothConnect : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bluetooth_connect)
-
+        this.setTitle(R.string.title_activity_bluetooth_connect)
         m_bluetoothAdapter= BluetoothAdapter.getDefaultAdapter()
         if(m_bluetoothAdapter==null){
 
