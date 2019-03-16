@@ -103,6 +103,7 @@ class MainActivity:AppCompatActivity() {
             .onColorSelected(object: ColorSelectListener {
                 override fun onColorSelected(color:Int) {
                     mColor = color
+
                     val hex = updateTextView(color)
 
                     val rgb = getRGB(hex)
@@ -112,9 +113,8 @@ class MainActivity:AppCompatActivity() {
                     val b = rgb[2].toString()
 
                     val set_rgb = "<@$r,$g,$b>"
-
+                    linearLayout2.setBackgroundColor(color);
                     Log.d("VERIABLE",set_rgb)
-
                     sendCommand(set_rgb);
                     //convert to r g b and sende command  to bluetooth <@RED,GREEN,BLUE> example as ( <@255,0,0>  is show only red color )
 
