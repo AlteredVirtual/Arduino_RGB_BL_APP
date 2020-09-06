@@ -1,7 +1,7 @@
 
 package com.sharpangel.rgb_led
 
-import android.app.ProgressDialog
+
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothDevice
 import android.bluetooth.BluetoothSocket
@@ -33,7 +33,6 @@ class MainActivity:AppCompatActivity() {
     companion object {
         var m_myUUID: UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB")
         var m_bluetoothSocket: BluetoothSocket? = null
-        lateinit var m_progress: ProgressDialog
         lateinit var m_bluetoothAdapter: BluetoothAdapter
         var m_isConnected: Boolean = false
         lateinit var m_address: String
@@ -73,7 +72,6 @@ class MainActivity:AppCompatActivity() {
             toast.setGravity(Gravity.CENTER, 0, 50)
             toast.show()
             sendCommand("<F>");
-
         }
 
         off.setOnClickListener()
@@ -113,7 +111,7 @@ class MainActivity:AppCompatActivity() {
                     val b = rgb[2].toString()
 
                     val set_rgb = "<@$r,$g,$b>"
-                    linearLayout2.setBackgroundColor(color);
+                    bg.setBackgroundColor(color);
                     Log.d("VERIABLE",set_rgb)
                     sendCommand(set_rgb);
                     //convert to r g b and sende command  to bluetooth <@RED,GREEN,BLUE> example as ( <@255,0,0>  is show only red color )
@@ -179,7 +177,6 @@ class MainActivity:AppCompatActivity() {
 
         override fun onPreExecute() {
             super.onPreExecute()
-            MainActivity.m_progress = ProgressDialog.show(context, "Connecting...", "please wait")
         }
 
         override fun doInBackground(vararg p0: Void?): String? {
@@ -205,7 +202,6 @@ class MainActivity:AppCompatActivity() {
             } else {
                 MainActivity.m_isConnected = true
             }
-            MainActivity.m_progress.dismiss()
         }
     }
 }

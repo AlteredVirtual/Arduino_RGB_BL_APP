@@ -39,7 +39,7 @@ class BluetoothConnect : AppCompatActivity() {
 
             Toast.makeText(this@BluetoothConnect, "Bu cihaz bluetooth desteklemiyor !", Toast.LENGTH_SHORT).show()
 
-            
+
             return
         }
         if (!m_bluetoothAdapter!!.isEnabled){
@@ -58,12 +58,14 @@ class BluetoothConnect : AppCompatActivity() {
 
         m_pairedDevices= m_bluetoothAdapter!!.bondedDevices
 
-        val list: ArrayList<BluetoothDevice> = ArrayList()
+        val listDvc: ArrayList<BluetoothDevice> = ArrayList()
+        val list: ArrayList<String> = ArrayList()
 
         if(!m_pairedDevices.isEmpty()){
             for(device: BluetoothDevice in m_pairedDevices){
-                list.add(device)
-                Log.i("device",""+device)
+                list.add(device.getName())
+                listDvc.add(device)
+                Log.i("device",""+ device.getName())
             }
         } else{
             Toast.makeText(this@BluetoothConnect, "Bluetooth aygıt bulunamadı !", Toast.LENGTH_SHORT).show()
@@ -76,7 +78,7 @@ class BluetoothConnect : AppCompatActivity() {
 
         bluetooth_devices.adapter = adapter
         bluetooth_devices.onItemClickListener = AdapterView.OnItemClickListener {_, _, position, _ ->
-            val device: BluetoothDevice= list[position]
+            val device: BluetoothDevice= listDvc[position]
             val address: String = device.address
 
             val intent = Intent(this, MainActivity::class.java)
